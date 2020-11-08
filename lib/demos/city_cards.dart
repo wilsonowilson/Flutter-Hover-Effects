@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../../core/constants.dart';
+import '../core/constants.dart';
 
 class City {
   final String name;

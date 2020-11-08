@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'demos/see_through/see_through.dart';
+import 'demos/see_through.dart';
 
 void main() {
   runApp(HoverEffectGallery());
