@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'demos/city_cards/city_cards.dart';
+import 'demos/perspective_cards/perspective_cards.dart';
 
 void main() {
   runApp(HoverEffectGallery());
@@ -16,7 +16,7 @@ class HoverEffectGallery extends StatelessWidget {
         fontFamily: 'Averta',
         primarySwatch: Colors.green,
       ),
-      home: CityCards(),
+      home: PerspectiveCards(),
     );
   }
 }
