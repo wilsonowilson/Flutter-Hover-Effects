@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'demos/city_cards/city_cards.dart';
+
 void main() {
   runApp(HoverEffectGallery());
 }
@@ -11,11 +13,10 @@ class HoverEffectGallery extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'Averta',
         primarySwatch: Colors.green,
       ),
-      home: Column(
-        children: [],
-      ),
+      home: CityCards(),
     );
   }
 }
