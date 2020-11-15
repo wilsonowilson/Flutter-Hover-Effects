@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'perspective_card.dart';
+
 class PerspectiveCards extends StatefulWidget {
   @override
   _PerspectiveCardsState createState() => _PerspectiveCardsState();
@@ -68,7 +70,8 @@ class _PerspectiveCardsState extends State<PerspectiveCards>
                               ..setEntry(3, 2, 0.001)
                               ..rotateY(0.3 * perspectiveAnimation.value),
                             child: PerspectiveCard(
-                                imageAsset: 'images/eiffel.jpeg'),
+                              imageAsset: 'images/eiffel.jpeg',
+                            ),
                           ),
                         ),
                         Transform.translate(
@@ -79,7 +82,8 @@ class _PerspectiveCardsState extends State<PerspectiveCards>
                               ..setEntry(3, 2, 0.001)
                               ..rotateY(0.2 * perspectiveAnimation.value),
                             child: PerspectiveCard(
-                                imageAsset: 'images/colosseum.jpeg'),
+                              imageAsset: 'images/colosseum.jpeg',
+                            ),
                           ),
                         ),
                       ],
@@ -88,25 +92,5 @@ class _PerspectiveCardsState extends State<PerspectiveCards>
             ),
           ),
         ));
-  }
-}
-
-class PerspectiveCard extends StatelessWidget {
-  const PerspectiveCard({Key key, @required this.imageAsset}) : super(key: key);
-  final String imageAsset;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 500,
-      height: 300,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(imageAsset),
-          fit: BoxFit.cover,
-        ),
-        boxShadow: [BoxShadow(blurRadius: 50, spreadRadius: -10)],
-      ),
-    );
   }
 }
