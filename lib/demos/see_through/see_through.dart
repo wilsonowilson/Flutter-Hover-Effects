@@ -6,7 +6,7 @@ class SeeThrough extends StatefulWidget {
 }
 
 class _SeeThroughState extends State<SeeThrough> {
-  Offset mousePosition;
+  Offset mousePosition = Offset(0, 0);
 
   @override
   Widget build(BuildContext context) {

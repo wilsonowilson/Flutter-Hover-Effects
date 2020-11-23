@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'demos/see_through/see_through.dart';
+import 'demos/cursor_blending/cursor_blending.dart';
 
 void main() {
   runApp(HoverEffectGallery());
@@ -16,7 +16,7 @@ class HoverEffectGallery extends StatelessWidget {
         fontFamily: 'Averta',
         primarySwatch: Colors.green,
       ),
-      home: SeeThrough(),
+      home: CursorBlending(),
     );
   }
 }
