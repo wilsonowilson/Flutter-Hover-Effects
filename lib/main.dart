@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'demos/cursor_blending/cursor_blending.dart';
+import 'demos/4-Cursor-Blending/cursor_blending.dart';
 
 void main() {
   runApp(HoverEffectGallery());
