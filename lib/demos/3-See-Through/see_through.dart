@@ -1,3 +1,6 @@
+// * Unsupported on Flutter web. Check out this issue:
+// https://github.com/flutter/flutter/issues/44152
+
 import 'package:flutter/material.dart';
 
 class SeeThrough extends StatefulWidget {
@@ -20,7 +23,7 @@ class _SeeThroughState extends State<SeeThrough> {
               height: double.maxFinite,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('images/colosseum.jpeg'),
+                      image: AssetImage('assets/colosseum.jpeg'),
                       fit: BoxFit.cover)),
             ),
             SizedBox.expand(

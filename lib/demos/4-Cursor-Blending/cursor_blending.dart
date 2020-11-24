@@ -25,7 +25,6 @@ class _CursorBlendingState extends State<CursorBlending>
   }
 
   void togglePointerSize(bool hovering) async {
-    print(hovering);
     if (hovering) {
       pointerSizeController.forward();
     } else

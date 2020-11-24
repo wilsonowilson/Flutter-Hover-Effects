@@ -11,7 +11,7 @@ class HoverEffectGallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Hover Effects',
       theme: ThemeData(
         fontFamily: 'Averta',
         primarySwatch: Colors.green,

@@ -1,3 +1,7 @@
+// Sidenote. Using ..setEntry on Matrix4 causes the web version to crash.
+
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class CityCard extends StatefulWidget {
@@ -56,13 +60,11 @@ class _CityCardState extends State<CityCard>
       child: AnimatedBuilder(
           animation: animation,
           builder: (context, _) {
-            var pi;
             return Transform.scale(
               scale: 0.4 * (1 - animation.value + 2.5),
               child: Transform(
                 alignment: FractionalOffset.center,
                 transform: Matrix4.identity()
-                  ..setEntry(3, 2, 0.001)
                   ..rotateZ((-pi / 4) * animation.value * 0.5),
                 child: Container(
                   width: 240,
