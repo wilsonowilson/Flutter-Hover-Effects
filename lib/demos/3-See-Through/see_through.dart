@@ -23,7 +23,7 @@ class _SeeThroughState extends State<SeeThrough> {
               height: double.maxFinite,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/colosseum.jpeg'),
+                      image: AssetImage('assets/images/colosseum.jpeg'),
                       fit: BoxFit.cover)),
             ),
             SizedBox.expand(

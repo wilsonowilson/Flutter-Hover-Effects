@@ -70,7 +70,7 @@ class _PerspectiveCardsState extends State<PerspectiveCards>
                               ..setEntry(3, 2, 0.001)
                               ..rotateY(0.3 * perspectiveAnimation.value),
                             child: PerspectiveCard(
-                              imageAsset: 'assets/eiffel.jpeg',
+                              imageAsset: 'assets/images/eiffel.jpeg',
                             ),
                           ),
                         ),
@@ -82,7 +82,7 @@ class _PerspectiveCardsState extends State<PerspectiveCards>
                               ..setEntry(3, 2, 0.001)
                               ..rotateY(0.2 * perspectiveAnimation.value),
                             child: PerspectiveCard(
-                              imageAsset: 'assets/colosseum.jpeg',
+                              imageAsset: 'assets/images/colosseum.jpeg',
                             ),
                           ),
                         ),

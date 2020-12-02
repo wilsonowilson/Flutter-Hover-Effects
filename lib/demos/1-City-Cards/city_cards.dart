@@ -13,17 +13,17 @@ class CityCards extends StatelessWidget {
       City(
         name: 'London',
         description: dummyText,
-        image: 'assets/big_ben.jpeg',
+        image: 'assets/images/big_ben.jpeg',
       ),
       City(
         name: 'Paris',
         description: dummyText,
-        image: 'assets/eiffel.jpeg',
+        image: 'assets/images/eiffel.jpeg',
       ),
       City(
         name: 'Rome',
         description: dummyText,
-        image: 'assets/colosseum.jpeg',
+        image: 'assets/images/colosseum.jpeg',
       ),
     ];
 
