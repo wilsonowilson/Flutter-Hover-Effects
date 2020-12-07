@@ -36,20 +36,17 @@ class CityCards extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: cityList
-                        .map(
-                          (e) => CityCard(
-                              imageAsset: e.image,
-                              cityName: e.name,
-                              cityDescription: e.description),
-                        )
-                        .toList(),
-                  ),
-                )
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: cityList
+                      .map(
+                        (e) => CityCard(
+                            imageAsset: e.image,
+                            cityName: e.name,
+                            cityDescription: e.description),
+                      )
+                      .toList(),
+                ),
               ],
             ),
           ),
