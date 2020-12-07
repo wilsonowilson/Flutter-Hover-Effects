@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../../widgets/animated_pointer.dart';
 
 class CursorBlending extends StatefulWidget {
   @override
@@ -11,7 +10,7 @@ class CursorBlending extends StatefulWidget {
 
 class _CursorBlendingState extends State<CursorBlending>
     with SingleTickerProviderStateMixin {
-  Offset pointerOffset = Offset(0, 0);
+  Offset pointerOffset;
   AnimationController pointerSizeController;
   Animation<double> pointerAnimation;
   @override
@@ -38,6 +37,7 @@ class _CursorBlendingState extends State<CursorBlending>
         opaque: false,
         cursor: SystemMouseCursors.none,
         onHover: (e) => setState(() => pointerOffset = e.localPosition),
+        onExit: (e) => setState(() => pointerOffset = null),
         child: Stack(
           children: [
             Row(
@@ -56,20 +56,21 @@ class _CursorBlendingState extends State<CursorBlending>
                 ),
               ],
             ),
-            AnimatedBuilder(
-                animation: pointerSizeController,
-                builder: (context, snapshot) {
-                  return AnimatedPointer(
-                    pointerOffset: pointerOffset,
-                    radius: 45 + 100 * pointerAnimation.value,
-                  );
-                }),
-            // }),
-            AnimatedPointer(
-              pointerOffset: pointerOffset,
-              movementDuration: const Duration(milliseconds: 200),
-              radius: 10,
-            )
+            if (pointerOffset != null) ...[
+              AnimatedBuilder(
+                  animation: pointerSizeController,
+                  builder: (context, snapshot) {
+                    return AnimatedPointer(
+                      pointerOffset: pointerOffset,
+                      radius: 45 + 100 * pointerAnimation.value,
+                    );
+                  }),
+              AnimatedPointer(
+                pointerOffset: pointerOffset,
+                movementDuration: const Duration(milliseconds: 200),
+                radius: 10,
+              )
+            ]
           ],
         ),
       ),
@@ -127,5 +128,54 @@ class TextColumn extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class AnimatedPointer extends StatelessWidget {
+  const AnimatedPointer({
+    Key key,
+    this.movementDuration = const Duration(milliseconds: 700),
+    this.radius = 30,
+    @required this.pointerOffset,
+  }) : super(key: key);
+  final Duration movementDuration;
+  final Offset pointerOffset;
+  final double radius;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedPositioned(
+      duration: movementDuration,
+      curve: Curves.easeOutExpo,
+      top: pointerOffset.dy,
+      left: pointerOffset.dx,
+      child: CustomPaint(
+        painter: Pointer(radius),
+      ),
+    );
+  }
+}
+
+// Multiple containers stacked on top of each other will block hover events
+// events, and the blending behaviour of an InkWell is a bit strange, so
+// I resorted to using a CustomPainter.
+class Pointer extends CustomPainter {
+  final double radius;
+
+  Pointer(this.radius);
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawCircle(
+      Offset(0, 0),
+      radius,
+      Paint()
+        ..color = Colors.white
+        ..blendMode = BlendMode.difference,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
   }
 }

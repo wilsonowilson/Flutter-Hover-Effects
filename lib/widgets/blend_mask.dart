@@ -33,10 +33,11 @@ class RenderBlendMask extends RenderProxyBox {
   @override
   void paint(context, offset) {
     context.canvas.saveLayer(
-        offset & size,
-        Paint()
-          ..blendMode = blendMode
-          ..color = Color.fromARGB((opacity * 255).round(), 255, 255, 255));
+      offset & size,
+      Paint()
+        ..blendMode = blendMode
+        ..color = Color.fromARGB((opacity * 255).round(), 255, 255, 255),
+    );
 
     super.paint(context, offset);
 

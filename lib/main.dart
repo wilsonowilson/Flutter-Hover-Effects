@@ -7,11 +7,11 @@ void main() {
 }
 
 class HoverEffectGallery extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hover Effects',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Averta',
         primarySwatch: Colors.green,
