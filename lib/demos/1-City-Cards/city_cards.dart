@@ -28,28 +28,29 @@ class CityCards extends StatelessWidget {
     ];
 
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 20, 20, 30),
-        body: SizedBox.expand(
-          child: Padding(
-            padding: const EdgeInsets.all(50),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: cityList
-                      .map(
-                        (e) => CityCard(
-                            imageAsset: e.image,
-                            cityName: e.name,
-                            cityDescription: e.description),
-                      )
-                      .toList(),
-                ),
-              ],
-            ),
+      backgroundColor: Color.fromARGB(255, 20, 20, 30),
+      body: SizedBox.expand(
+        child: Padding(
+          padding: const EdgeInsets.all(50),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: cityList
+                    .map(
+                      (e) => CityCard(
+                          imageAsset: e.image,
+                          cityName: e.name,
+                          cityDescription: e.description),
+                    )
+                    .toList(),
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

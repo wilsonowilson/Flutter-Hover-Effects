@@ -21,22 +21,22 @@ class _PerspectiveCardsState extends State<PerspectiveCards>
     perspectiveAnimation = Tween<double>(begin: -1, end: 1).animate(
         CurvedAnimation(
             curve: Curves.easeInOutCubic, parent: perspectiveController));
-    WidgetsBinding.instance.addPostFrameCallback((_) => getHeight());
+    WidgetsBinding.instance.addPostFrameCallback((_) => getWidth());
     super.initState();
+  }
+
+  void getWidth() {
+    final state = key.currentState;
+    final RenderBox box = state.context.findRenderObject();
+    setState(() {
+      screenWidth = box.size.width;
+    });
   }
 
   @override
   void dispose() {
     perspectiveController.dispose();
     super.dispose();
-  }
-
-  void getHeight() {
-    final state = key.currentState;
-    final RenderBox box = state.context.findRenderObject();
-    setState(() {
-      screenWidth = box.size.width;
-    });
   }
 
   @override
