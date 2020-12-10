@@ -9,8 +9,6 @@ class PerspectiveCards extends StatefulWidget {
 
 class _PerspectiveCardsState extends State<PerspectiveCards>
     with SingleTickerProviderStateMixin {
-  final key = GlobalKey();
-  var screenWidth = 0.0;
   AnimationController perspectiveController;
   Animation<double> perspectiveAnimation;
 
@@ -21,16 +19,7 @@ class _PerspectiveCardsState extends State<PerspectiveCards>
     perspectiveAnimation = Tween<double>(begin: -1, end: 1).animate(
         CurvedAnimation(
             curve: Curves.easeInOutCubic, parent: perspectiveController));
-    WidgetsBinding.instance.addPostFrameCallback((_) => getWidth());
     super.initState();
-  }
-
-  void getWidth() {
-    final state = key.currentState;
-    final RenderBox box = state.context.findRenderObject();
-    setState(() {
-      screenWidth = box.size.width;
-    });
   }
 
   @override
@@ -41,8 +30,8 @@ class _PerspectiveCardsState extends State<PerspectiveCards>
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-        key: key,
         backgroundColor: Colors.black,
         body: MouseRegion(
           onEnter: (e) {},
