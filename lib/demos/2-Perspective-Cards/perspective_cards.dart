@@ -49,33 +49,37 @@ class _PerspectiveCardsState extends State<PerspectiveCards>
               child: AnimatedBuilder(
                   animation: perspectiveController,
                   builder: (context, snapshot) {
-                    return Stack(
-                      children: [
-                        Transform.translate(
-                          offset: Offset(100 * perspectiveAnimation.value, 160),
-                          child: Transform(
-                            alignment: FractionalOffset.center,
-                            transform: Matrix4.identity()
-                              ..setEntry(3, 2, 0.001)
-                              ..rotateY(0.3 * perspectiveAnimation.value),
-                            child: PerspectiveCard(
-                              imageAsset: 'assets/images/eiffel.jpeg',
+                    return Transform.translate(
+                      offset: Offset(0, -70),
+                      child: Stack(
+                        children: [
+                          Transform.translate(
+                            offset:
+                                Offset(100 * perspectiveAnimation.value, 160),
+                            child: Transform(
+                              alignment: FractionalOffset.center,
+                              transform: Matrix4.identity()
+                                ..setEntry(3, 2, 0.001)
+                                ..rotateY(0.3 * perspectiveAnimation.value),
+                              child: PerspectiveCard(
+                                imageAsset: 'assets/images/eiffel.jpeg',
+                              ),
                             ),
                           ),
-                        ),
-                        Transform.translate(
-                          offset: Offset(10 * perspectiveAnimation.value, 0),
-                          child: Transform(
-                            alignment: FractionalOffset.center,
-                            transform: Matrix4.identity()
-                              ..setEntry(3, 2, 0.001)
-                              ..rotateY(0.2 * perspectiveAnimation.value),
-                            child: PerspectiveCard(
-                              imageAsset: 'assets/images/colosseum.jpeg',
+                          Transform.translate(
+                            offset: Offset(10 * perspectiveAnimation.value, 0),
+                            child: Transform(
+                              alignment: FractionalOffset.center,
+                              transform: Matrix4.identity()
+                                ..setEntry(3, 2, 0.001)
+                                ..rotateY(0.2 * perspectiveAnimation.value),
+                              child: PerspectiveCard(
+                                imageAsset: 'assets/images/colosseum.jpeg',
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     );
                   }),
             ),
