@@ -1,6 +1,9 @@
 // Assets gotten from: https://cuberto-cursor.netlify.app
 // Originally by cuberto.com
 
+// BlendMask for images does not work on Flutter web, as well as Text Stroke.
+// Known issues: https://github.com/flutter/flutter/issues/46683
+
 import 'package:flutter/material.dart';
 
 import '../../widgets/blend_mask.dart';
@@ -273,6 +276,7 @@ class _AnimatedStrokedTextState extends State<AnimatedStrokedText>
                   style: TextStyle(
                     fontSize: 60,
                     fontWeight: FontWeight.w900,
+                    // Comment this out on web
                     foreground: Paint()
                       ..style = PaintingStyle.stroke
                       ..strokeWidth = 1.3
