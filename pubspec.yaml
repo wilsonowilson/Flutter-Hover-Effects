@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.0
+  funvas: ^0.0.3+1
+  mouse_parallax: ^0.2.2
 
 dev_dependencies:
   flutter_test:
@@ -22,6 +24,9 @@ flutter:
     - assets/images/apps.gif
     - assets/images/websites.gif
     - assets/images/branding.gif
+    - assets/images/one.gif
+    - assets/images/two.gif
+    - assets/images/three.gif
     - assets/images/colosseum.jpeg
     - assets/images/eiffel.jpeg
     - assets/images/big_ben.jpeg
