@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'demos/2-Perspective-Cards/perspective_cards.dart';
+import 'demos/7-Cursor-Carousel/cursor_carousel.dart';
 
 void main() {
   runApp(HoverEffectGallery());
@@ -16,7 +16,7 @@ class HoverEffectGallery extends StatelessWidget {
         fontFamily: 'Averta',
         primarySwatch: Colors.green,
       ),
-      home: PerspectiveCards(),
+      home: CursorCarousel(),
     );
   }
 }
